@@ -1,6 +1,8 @@
 plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("io.micronaut.application") version "3.7.0"
+    id "com.microsoft.azure.azurewebapp" version "1.1.0"
+
 }
 
 version = "0.1"
@@ -36,6 +38,19 @@ micronaut {
     processing {
         incremental(true)
         annotations("tiny.*")
+    }
+}
+
+azurewebapp{
+    subscription = '7750e64a-0e80-4cb3-bf46-a44c63d20964'
+    resourceGroup = 'tiny_group'
+    appName = 'tiny'
+    pricingTier = 'P1v2'
+    region = 'westus'
+    runtime={
+        os = 'Linux'
+        webContainer = 'Tomcat 9.0'
+        javaVersion = 'Java 11'
     }
 }
 
