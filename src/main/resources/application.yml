@@ -1,0 +1,9 @@
+micronaut:
+  application:
+    name: tiny
+    packages:
+      - tiny.controller
+netty:
+  default:
+    allocator:
+      max-order: 3
